@@ -99,3 +99,7 @@ table th:not([align]) {
   margin-top: 2.5em;
   margin-bottom: 10px;
 }
+
+li {
+  text-decoration: none;
+}
