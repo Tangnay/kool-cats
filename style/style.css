@@ -84,3 +84,7 @@ table th:not([align]) {
   margin-bottom: 4.5rem;
   font-size: 81px;
 }
+
+.image {
+  width: 100%;
+}
