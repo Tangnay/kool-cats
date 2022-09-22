@@ -98,11 +98,16 @@ table th:not([align]) {
   margin: 25px;
   font-size: 30px;
 } */
-
 #book-equipment h1 {
   font-size: 2em;
   margin-top: 2.5em;
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
+li {
+  text-decoration: none;
+}
+=======
 >>>>>>> 27f3e951bb8793024c7493e8090885816dad8c93
+>>>>>>> origin
