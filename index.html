@@ -29,11 +29,17 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <!-- font type -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
+    <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -89,25 +95,14 @@
       <div class="level-item has-text-centered">
         <div class="row">
           <div>
-            <div id="embed-iframe is-level-center"></div>
-            <iframe
-              style="border-radius: 12px"
-              src="https://open.spotify.com/embed/album/0JeyP8r2hBxYIoxXv11XiX?utm_source=generator&theme=0"
-              width="65%"
-              height="80"
-              frameborder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
-
-            <p>Listen to free music playlist</p>
+            <div id="embed-iframe" class="is-level-center"></div>
+            <p>Listen to free workout podcasts</p>
           </div>
 
-          <div class="content">
-            <h1>Book Equipment</h1>
-          </div>
           <div class="section">
+            <div id="book-equipment" class="content">
+              <h1>Book Equipment</h1>
+            </div>
             <div class="field">
               <div class="control has-icons-left has-icons-right">
                 <input id="name" class="input" type="text" placeholder="Name" />
@@ -226,10 +221,10 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <img src="./style/treadmill.png" alt="trademill" />
+                  <img src="./style/treadmill.png" alt="treadmill" />
                 </figure>
                 <div class="content has-text-centered">
-                  <div class="text-content">trademill</div>
+                  <div class="text-content">treadmill</div>
                   <a href="./book-equipment.html"
                     ><button class="button is-black">Check Availability</button>
                   </a>
@@ -245,7 +240,7 @@
                   <img src="./style/arm-press.png" alt="arm-press" />
                 </figure>
                 <div class="content has-text-centered">
-                  <div class="text-content">arm preess</div>
+                  <div class="text-content">arm press</div>
                   <a href="./book-equipment.html"
                     ><button class="button is-black">Check Availability</button>
                   </a>
@@ -311,7 +306,7 @@
                   <img src="./style/leg-press.png" alt="leg-press" />
                 </figure>
                 <div class="content has-text-centered">
-                  <div class="text-content">legpress</div>
+                  <div class="text-content">leg press</div>
                   <a href="./book-equipment.html">
                     <button class="button is-black">
                       Check Availability
@@ -362,27 +357,39 @@
           <div class="">
             <p>Let connect</p>
 
-            <span>
+            <span class="icon">
               <a href="https://www.youtube.com/account" title="youtube">
-                <i class="fa-brands fa-square-youtube"></i
+                <i
+                  class="fa-brands fa-square-youtube"
+                  style="font-size: 24px"
+                ></i
               ></a>
             </span>
 
             <span class="icon">
               <a href="https://www.facebook.com/login/" title="facebook"
-                ><i class="fa-brands fa-square-facebook"></i
+                ><i
+                  class="fa-brands fa-square-facebook"
+                  style="font-size: 24px"
+                ></i
               ></a>
             </span>
 
             <span class="icon">
-              <a href="https://www.instagram.com/" title="instargram"
-                ><i class="fa-brands fa-square-instagram"> </i>
+
+            <a href="https://www.instagram.com/" title="instargram"
+                ><i
+                  class="fa-brands fa-square-instagram"
+                  style="font-size: 24px"
+                >
+                </i>
+
               </a>
             </span>
 
             <span class="icon">
               <a href="https://twitter.com/i/flow/login" title="twitter"
-                ><i class="fa fa-twitter-square"> </i>
+                ><i class="fa fa-twitter-square" style="font-size: 24px"> </i>
               </a>
             </span>
           </div>

@@ -82,9 +82,27 @@ table th:not([align]) {
 
 .title:not(:last-child) {
   margin-bottom: 4.5rem;
-  font-size: 81px;
+  font-size: 66px;
+  font-family: "Paytone One", sans-serif;
 }
 
+<<<<<<< HEAD
 .image {
   width: 100%;
 }
+=======
+/* .icon { " 
+  color: #485fc7;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 25px;
+  font-size: 30px;
+} */
+
+#book-equipment h1 {
+  font-size: 2em;
+  margin-top: 2.5em;
+  margin-bottom: 10px;
+}
+
+>>>>>>> 27f3e951bb8793024c7493e8090885816dad8c93
