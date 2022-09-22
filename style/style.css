@@ -82,10 +82,15 @@ table th:not([align]) {
 
 .title:not(:last-child) {
   margin-bottom: 4.5rem;
-  font-size: 81px;
+  font-size: 66px;
   font-family: "Paytone One", sans-serif;
 }
 
+<<<<<<< HEAD
+.image {
+  width: 100%;
+}
+=======
 /* .icon { " 
   color: #485fc7;
   cursor: pointer;
@@ -99,6 +104,10 @@ table th:not([align]) {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 li {
   text-decoration: none;
 }
+=======
+>>>>>>> 27f3e951bb8793024c7493e8090885816dad8c93
+>>>>>>> origin

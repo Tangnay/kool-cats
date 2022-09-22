@@ -1,6 +1,86 @@
-* { 
-	max-width: 1080px;
-    max-height: 900px; 
-	margin: 0 auto !important; 
-	float: none !important; 
-}
+footer ul li {
+	list-style-type: none;
+  }
+  .logo-text {
+	font-size: 30px;
+	font-weight: bold;
+  }
+  
+  body {
+	background-color: #CFF087;
+  }
+  
+  .carousel {
+	padding: 3rem 1.5rem;
+	overflow: hidden;
+  }
+  
+  .input {
+	background-color: #5D6BA8;
+	border-color: #dbdbdb;
+	border-radius: 4px;
+	color: white;
+  }
+  
+  .input::placeholder { 
+	color: white;
+	opacity: 0.75; 
+  }
+  
+  footer {
+	background-color: #e6e6e6;
+	
+  }
+  
+  .card {
+	padding: 75px;
+	margin: 20px;
+	border-radius: 10%;
+  }
+  
+  .logo {
+  
+  }
+  
+  .slider-navigation-next {
+	background-color: #5d6ba8;
+  }
+  
+  .slider-navigation-previous {
+	background-color: #5d6ba8; 
+  }
+  
+  .slider-navigation-next svg {
+	color: white; 
+  }
+  
+  .slider-navigation-previous svg {
+	color: white; 
+  }
+  
+  .button {
+	background-color: #5d6ba8;
+  }
+  
+  .navbar-item img {
+	max-height: 3.55rem;
+  }
+  
+  #id {
+	color: white;
+  }
+  .button.is-primary {
+	background-color: #5d6ba8;
+  }
+  
+  .button.is-primary:hover {
+	background-color: #6a74a3;
+  }
+  
+  .table td:not([align]), table th:not([align]) {
+	text-align: left;
+  }
+  Footer
+  © 2022 GitHub, Inc.
+  Footer navigation
+  
