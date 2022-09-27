@@ -24,35 +24,35 @@ submit.addEventListener("click", function (event) {
     zipCode: zipCode.value,
   };
 
-  localStorage.setItem("signUp", JSON.stringify(signUp));
-  signUpSave();
-});
-function signUpSave() {
-  var showText = JSON.parse(localStorage.getItem("signUp"));
-
-  if (showText !== null) {
-    document.querySelector(".response").textContent =
-      "we will give you a call!";
+  function displayMessage(message) {
+    var response = document.querySelector(".response");
+    response.textContent = message;
+    // response.setAttribute("class", type);
   }
-}
 
+  if (signUp.firstName === "") {
+    displayMessage("Error!! First name cannot be blank");
+  } else if (signUp.lastName === "") {
+    displayMessage("Error!! Last name cannot be blank");
+  } else if (signUp.email === "") {
+    displayMessage("Error!! Email cannot be blank");
+  } else if (signUp.phoneNumber === "") {
+    displayMessage("Error!! Phone Number cannot be blank");
+  } else if (signUp.zipCode === "") {
+    displayMessage("Error!! Zip Code cannot be blank");
+  } else {
+    // success/ no error
+    displayMessage("We will give you a call");
+    localStorage.setItem("signUp", JSON.stringify(signUp));
+    signUpSave();
+  }
 
+  function signUpSave() {
+    var showText = JSON.parse(localStorage.getItem("signUp"));
 
-
-// // const carousels = bulmaCarousel.attach('.carousel', options);
-// // Loop on each carousel initialized
-// for(var i = 0; i < carousels.length; i++) {
-// 	// Add listener to  event
-// 	carousels[i].on('before:show', state => {
-// 		console.log(state);
-// 	});
-// }
-
-// // Access to bulmaCarousel instance of an element
-// var element = document.querySelector('#my-element');
-// if (element && element.bulmaCarousel) {
-// 	// bulmaCarousel instance is available as element.bulmaCarousel
-// 	element.bulmaCarousel.on('before-show', function(state) {
-// 		console.log(state);
-// 	});
-// }
+    // if (showText !== null) {
+    //   document.querySelector(".response").textContent =
+    //     "we will give you a call!";
+    // }
+  }
+});

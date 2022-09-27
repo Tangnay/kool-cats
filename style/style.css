@@ -86,28 +86,16 @@ table th:not([align]) {
   font-family: "Paytone One", sans-serif;
 }
 
-<<<<<<< HEAD
-.image {
-  width: 100%;
-}
-=======
-/* .icon { " 
-  color: #485fc7;
-  cursor: pointer;
-  text-decoration: none;
-  margin: 25px;
-  font-size: 30px;
-} */
 #book-equipment h1 {
   font-size: 2em;
   margin-top: 2.5em;
   margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
-li {
-  text-decoration: none;
+.schedule-btn {
+  min-width: 400px;
 }
-=======
->>>>>>> 27f3e951bb8793024c7493e8090885816dad8c93
->>>>>>> origin
+
+.datetimepicker-dummy-wrapper {
+  background-color: white;
+}
