@@ -80,22 +80,9 @@ table th:not([align]) {
   text-align: left;
 }
 
-.title:not(:last-child) {
-  margin-bottom: 4.5rem;
-  font-size: 66px;
-  font-family: "Paytone One", sans-serif;
+.book-equipment {
+  background-color: rgb(174, 174, 174);
 }
-
-#book-equipment h1 {
-  font-size: 2em;
-  margin-top: 2.5em;
-  margin-bottom: 10px;
-}
-
 .schedule-btn {
-  min-width: 400px;
-}
-
-.datetimepicker-dummy-wrapper {
-  background-color: white;
+  min-width: 100px;
 }

@@ -6,6 +6,9 @@ $(document).ready(function () {
     $(".navbar-burger").toggleClass("is-active");
     $(".navbar-menu").toggleClass("is-active");
   });
+
+  document.querySelector(".datetimepicker-dummy-input").value =
+    moment().format("MM/DD/YYYY");
 });
 
 // initialize carousel
@@ -109,16 +112,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // spotfify API
 
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
-  let element = document.getElementById('embed-iframe');
+  let element = document.getElementById("embed-iframe");
   let options = {
-    uri: 'spotify:show:1DUZrbF7kHU0TME6tbo43t',
+    uri: "spotify:show:1DUZrbF7kHU0TME6tbo43t",
   };
   let callback = (EmbedController) => {};
   IFrameAPI.createController(element, options, callback);
 };
 
-var api_token = ""
-var access_token = ""
+var api_token = "";
+var access_token = "";
 
 $.ajax({
   async: true,
@@ -151,81 +154,74 @@ $.ajax({
     });
   });
 
-  $.ajax({
-    async: true,
-    crossDomain: true,
-    url: 'https://sagenda.net/api/v3/token',
-    method: 'POST',
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded',
-    },
-    data: {
-      grant_type: 'api_token',
-      api_token: 'a075eba83d7c4f47ab0fffa234dc9505',
-    },
+$.ajax({
+  async: true,
+  crossDomain: true,
+  url: "https://sagenda.net/api/v3/token",
+  method: "POST",
+  headers: {
+    "content-type": "application/x-www-form-urlencoded",
+  },
+  data: {
+    grant_type: "api_token",
+    api_token: "a075eba83d7c4f47ab0fffa234dc9505",
+  },
+})
+  .then(function (response) {
+    console.log(response);
+    return (api_token = response.access_token);
   })
-    .then(function (response) {
+  .then(function (response) {
+    $.ajax({
+      async: true,
+      crossDomain: true,
+      url: "https://sagenda.net/api/v3/events/2022-10-01/2022-10-01/6323c116701dd404ccfaa1dd",
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + response,
+      },
+    }).done(function (response) {
       console.log(response);
-      return (api_token = response.access_token);
-    })
-    .then(function (response) {
-      $.ajax({
-        async: true,
-        crossDomain: true,
-        url: 'https://sagenda.net/api/v3/events/2022-10-01/2022-10-01/6323c116701dd404ccfaa1dd',
-        method: 'GET',
-        headers: {
-          Authorization: 'Bearer ' + response,
-        },
-      }).done(function (response) {
-        console.log(response);
-      });
-    }); 
+    });
+  });
+// calender
+const calendars = bulmaCalendar.attach('[type="date"]', {
+  dateFormat: "MM/DD/YYYY",
+  displayMode: "dialog",
+});
 
-      var bnt1 = document.getElementById("btn1");
-      var bnt2 = document.getElementById("btn2");
-      var bnt3 = document.getElementById("btn3");
-      var bnt4 = document.getElementById("btn4");
-  
-      btn1.addEventListener('click', function () {
-        console.log('clicked');
-        btn1.classList.add('is-success');
-      });
+var reserve = document.querySelector(".reserve-btn");
+var scheduleBtns = document.querySelectorAll(".schedule-btn");
 
-      btn2.addEventListener('click', function () {
-        console.log('clicked');
-        btn2.classList.add('is-success');
-      });
+const displayBookedMessage = (message) => {
+  document.querySelector("#success-message").textContent = message;
+};
 
-      btn3.addEventListener('click', function () {
-        console.log('clicked');
-        btn3.classList.add('is-success');
-      });
+scheduleBtns.forEach((btn) => {
+  btn.addEventListener("click", function (event) {
+    event.preventDefault();
 
-      btn4.addEventListener('click', function () {
-        console.log('clicked');
-        btn4.classList.add('is-danger');
-      });
-  
+    // clear all selection
+    document
+      .querySelectorAll(".schedule-btn")
+      .forEach((b) => b.classList.remove("is-success"));
 
-    // //{
-    //   "eventIdentifier"; "NjMyNjc5ZTExNzkyNmY0ODQ0Y2MzMTM0OzEwLzEvMjAyMiAxMDowMCBBTTs2MzIzYzExNjcwMWRkNDA0Y2NmYWExZGQ",
-    //   "userIdentifier"; "[user-identifier]",
-    //   "participants"; 1 
-    // }
-    
-    // $.ajax({
-    //   "async": true,
-    //   "crossDomain": true,
-    //   "url": "https://sagenda.net/api/v3/eventLocks",
-    //   "method": "POST ",
-    //   "headers": {
-    //     "content-type": "application/json",
-    //     "authorization": "Bearer " + api_token,
-    //   },
-    //   "processData": false,
-    //   "data": "{\"eventIdentifier\":\"NjMyNjc5ZTExNzkyNmY0ODQ0Y2MzMTM0OzEwLzEvMjAyMiAxMDowMCBBTTs2MzIzYzExNjcwMWRkNDA0Y2NmYWExZGQ\",\"participants\": 1}"
-    // }).done(function (response) {
-    //   console.log(response);
-    // });
- 
+    // once you slected the time slot, it will change the color
+    btn.classList.add("is-success");
+
+    const scheduleTime = btn.textContent;
+    var message = document.getElementById("message-reserve");
+    var reserveBtn = document.getElementById("reserve-btn");
+    const scheduleDate = document.querySelector(
+      ".datetimepicker-dummy-input"
+    ).value;
+
+    localStorage.setItem("scheduleBtns", btn);
+
+    reserveBtn.addEventListener("click", function (message) {
+      displayBookedMessage(
+        `The item is reserved at ${scheduleDate} ${scheduleTime}. Thanks!`
+      );
+    });
+  });
+});
